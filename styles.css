@@ -4,7 +4,25 @@
     font-family: montserrat;
     box-sizing: border-box;
 }
-.jumbotron {
-    padding: 10rem;
+#hero-banner{
     background-color: blueviolet;
+}
+
+.image-jumbotron {
+    width: 100%;
+}
+
+.headline-h1 {
+    color: white;
+    margin-bottom: mb-5;
+}
+
+.headline-paragraf {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.wrapper-headline {
+    padding: 0 2rem 0 0;
 }
