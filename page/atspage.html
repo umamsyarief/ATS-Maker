@@ -4,22 +4,23 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/atspage.css">
+        <link rel="stylesheet" href="/css/nav.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <script src="/js/ats.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
             <div class="container">
                 <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-target="#navbar-in-collapse" data-mdb-toggle="collapse" data-mdb-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto">
-                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
-                        <a class="nav-link" href="atspage.html">ATS Maker</a>
-                        <a class="btn btn-outline-info my-2 my-sm-0" type="submit" href="login.html">Login</a>
-                        <a class="btn btn-outline-info my-2 my-sm-0" type="submit">Daftar</a>
+                        <a class="nav-link p-2" aria-current="page" href="/index.html">Home</a>
+                        <a class="nav-link p-2 active" href="atspage.html">ATS Maker</a>
+                        <a class="btn btn-outline-light my-2 my-sm-0 buttonNavbar" type="submit" href="login.html">Login</a>
+                        <a class="btn btn-outline-light my-2 my-sm-0 buttonNavbar buttonNavbar-right" type="submit">Daftar</a>
                     </div>
                 </div>
             </div>
