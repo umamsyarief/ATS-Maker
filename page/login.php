@@ -64,16 +64,16 @@ if (isset($_POST['submit'])) {
                                             <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Masuk ke Akun Anda</h5>
                                             <div class="faorm-outline mb-4">
                                                 <label class="form-label" for="form2Example17">Email</label>
-                                                <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                                                <input type="email" id="form2Example17" class="form-control form-control-lg"  value="<?php echo $email; ?>" required />
                                             </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example27">Password</label>
-                                            <input type="password" id="form2Example27" class="form-control form-control-lg" />
+                                            <input type="password" id="form2Example27" class="form-control form-control-lg"  value="<?php echo $_POST['password']; ?>" required>
                                         </div>
                                         <div class="pt-1 mb-4">
                                             <button class="btn btn-dark btn-lg btn-block" type="button">Masuk</button>
                                         </div>
-                                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Tidak punya akun? <a href="#!" style="color: #393f81;">Register here</a></p>
+                                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Tidak punya akun? <a href="register.php" style="color: #393f81;">Register here</a></p>
                                         </form>
 
                                     </div>
