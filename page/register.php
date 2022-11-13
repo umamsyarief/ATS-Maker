@@ -1,20 +1,21 @@
 <?php 
  
-include 'config.php';
+include '../config.php';
  
 error_reporting(0);
  
 session_start();
  
-if (isset($_SESSION['username'])) {
-    header("Location: index.php");
-}
+// if (isset($_SESSION['username'])) {
+//     header("Location: index.php");
+// }
  
 if (isset($_POST['submit'])) {
+    echo "<script>alert('Masuk.')</script>";
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = md5($_POST['password']);
-    $cpassword = md5($_POST['cpassword']);
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
  
     if ($password == $cpassword) {
         $sql = "SELECT * FROM users WHERE email='$email'";
@@ -95,7 +96,7 @@ if (isset($_POST['submit'])) {
                                                     <div class="form-outline flex-fill mb-0">
                                                         <label class="form-label" for="form3Example4cd">Ulangi Password Anda</label>
                                                         <input type="password" id="form3Example4cd" class="form-control" placeholder="Confirm Password" name="cpassword" value="<?php echo $_POST['cpassword']; ?>" required>
-                                                        <input type="password" id="form3Example4cd" class="form-control" />
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="form-check d-flex justify-content-center mb-5">
@@ -105,7 +106,7 @@ if (isset($_POST['submit'])) {
                                                     </label>
                                                 </div>
                                                 <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                    <a type="button" class="btn btn-lg btn-primary">Registrasi</a>
+                                                    <button class="btn btn-lg btn-primary" name="submit">Registrasi</button>
                                                 </div>
                                             </form>
                                         </div>

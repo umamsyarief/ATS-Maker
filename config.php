@@ -3,7 +3,7 @@
 $server = "localhost";
 $user = "root";
 $pass = "";
-$database = "ATS_Maker";
+$database = "ats_maker";
  
 $conn = mysqli_connect($server, $user, $pass, $database);
  

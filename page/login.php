@@ -11,12 +11,12 @@ session_start();
 // }
 
 if (isset($_POST['submit'])) {
-    echo "<script>alert('coba')</script>";
+    
     $email = $_POST['email'];
     $password = $_POST['password'];
     $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
     $result = mysqli_query($conn, $sql);
-    
+    echo "<script>alert('$email $password')</script>";
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['username'] = $row['username'];
@@ -50,9 +50,9 @@ if (isset($_POST['submit'])) {
                                     <div class="card-body p-4 p-lg-5 text-black">
                                     <form action="" method="POST" class="login-email">
                                         <div class="d-flex align-items-center mb-3 pb-1">
-                                            <form>
-                                                <img src="/img/back.png" alt="Back" width="20" onclick="history.back()">
-                                            </form>
+                                            
+                                            <img src="/img/back.png" alt="Back" width="20" onclick="history.back()">
+                                            
                                             <!--Masukin buat headnya, Logo dll-->
                                             <a class="logoLogin" href="/index.html">
                                                 <!-- img -->
@@ -64,11 +64,13 @@ if (isset($_POST['submit'])) {
                                             <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Masuk ke Akun Anda</h5>
                                             <div class="faorm-outline mb-4">
                                                 <label class="form-label" for="form2Example17">Email</label>
-                                                <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                                                <input type="email" id="form2Example17" class="form-control form-control-lg" name="email" value="<?php echo $email; ?>" required />
+                                                
                                             </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example27">Password</label>
-                                            <input type="password" id="form2Example27" class="form-control form-control-lg" />
+                                        
+                                            <input type="password" id="form2Example27" class="form-control form-control-lg" name="password" value="<?php echo $_POST['password']; ?>" required>
                                         </div>
                                         <div class="pt-1 mb-4">
                                             <button class="btn btn-dark btn-lg btn-block" name="submit">Login</button>
