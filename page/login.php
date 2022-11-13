@@ -49,29 +49,32 @@ if (isset($_POST['submit'])) {
                                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                     <div class="card-body p-4 p-lg-5 text-black">
                                     <form action="" method="POST" class="login-email">
-                                            <div class="d-flex align-items-center mb-3 pb-1">
-                                                <form>
-                                                    <img src="/img/back.png" alt="Back" width="20" onclick="history.back()">
-                                                </form>
-                                                <!--Masukin buat headnya, Logo dll-->
-                                                <a class="logoLogin" href="/index.html">
-                                                    <!-- img -->
-                                                    LOGO
-                                                    <span class="label fw-bold fs-3 logoLabel"> OneNightCV </span>
-                                                </a>
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <form>
+                                                <img src="/img/back.png" alt="Back" width="20" onclick="history.back()">
+                                            </form>
+                                            <!--Masukin buat headnya, Logo dll-->
+                                            <a class="logoLogin" href="/index.html">
+                                                <!-- img -->
+                                                LOGO
+                                                <span class="label fw-bold fs-3 logoLabel"> OneNightCV </span>
+                                            </a>
                                                 
-                                            </div>
-                                            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Masuk ke Akun Anda</h5>
-                                            <div class="faorm-outline mb-4">
-                                                <label class="form-label" for="form2Example17">Email</label>
-                                                <input type="email" id="form2Example17" class="form-control form-control-lg" />
-                                            </div>
+                                        </div>
+                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Masuk ke Akun Anda</h5>
+                                        <div class="faorm-outline mb-4">
+                                            <label class="form-label" for="form2Example17">Email</label>
+                                            <!-- <input type="email" id="form2Example17" class="form-control form-control-lg" /> -->
+                                            <input type="email" id="form2Example17" class="form-control form-control-lg" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
+                                        </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example27">Password</label>
-                                            <input type="password" id="form2Example27" class="form-control form-control-lg" />
+                                            <!-- <input type="password" id="form2Example27" class="form-control form-control-lg" /> -->
+                                            <input type="password" id="form2Example27" class="form-control form-control-lg" name="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
                                         </div>
                                         <div class="pt-1 mb-4">
-                                            <button class="btn btn-dark btn-lg btn-block" type="button">Masuk</button>
+                                            <button class="btn btn-dark btn-lg btn-block" name="submit">Login</button>
+                                            <!-- <button class="btn btn-dark btn-lg btn-block" type="button">Masuk</button> -->
                                         </div>
                                         <p class="mb-5 pb-lg-2" style="color: #393f81;">Tidak punya akun? <a href="#!" style="color: #393f81;">Register here</a></p>
                                         </form>
