@@ -1,3 +1,49 @@
+<?php 
+ 
+include '../config.php';
+ 
+error_reporting(0);
+ 
+session_start();
+ 
+// if (isset($_SESSION['username'])) {
+//     header("Location: index.php");
+// }
+ 
+if (isset($_POST['submit'])) {
+    echo "<script>alert('Masuk.')</script>";
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+ 
+    if ($password == $cpassword) {
+        $sql = "SELECT * FROM users WHERE email='$email'";
+        $result = mysqli_query($conn, $sql);
+        if (!$result->num_rows > 0) {
+            $sql = "INSERT INTO users (username, email, password)
+                    VALUES ('$username', '$email', '$password')";
+            $result = mysqli_query($conn, $sql);
+            if ($result) {
+                echo "<script>alert('Selamat, registrasi berhasil!')</script>";
+                $username = "";
+                $email = "";
+                $_POST['password'] = "";
+                $_POST['cpassword'] = "";
+            } else {
+                echo "<script>alert('Woops! Terjadi kesalahan.')</script>";
+            }
+        } else {
+            echo "<script>alert('Woops! Email Sudah Terdaftar.')</script>";
+        }
+         
+    } else {
+        echo "<script>alert('Password Tidak Sesuai')</script>";
+    }
+}
+ 
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,33 +66,37 @@
                                                 <img src="/img/back.png" alt="Back" width="20" onclick="history.back()">
                                             </form>
                                             <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registrasi</p>
-                                            <form class="mx-1 mx-md-4" method="post">
+                                            <form action="" method="POST" class="mx-1 mx-md-4">
                                                 <div class="d-flex flex-row align-items-center mb-4">
                                                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                                     <div class="form-outline flex-fill mb-0">
                                                         <label class="form-label" for="form3Example1c">Nama Anda</label>
-                                                        <input type="text" id="form3Example1c" class="form-control" />
+                                                        <input type="text" id="form3Example1c" class="form-control" placeholder="Username" name="username" value="<?php echo $username; ?>" required>
+                                                        <!-- <input type="text" id="form3Example1c" class="form-control" /> -->
                                                     </div>
                                                 </div>
                                                 <div class="d-flex flex-row align-items-center mb-4">
                                                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                                     <div class="form-outline flex-fill mb-0">
                                                         <label class="form-label" for="form3Example3c">Email Anda</label>
-                                                        <input type="email" id="form3Example3c" class="form-control" />
+                                                        <input type="email" id="form3Example3c" class="form-control" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
+                                                        <!-- <input type="email" id="form3Example3c" class="form-control" /> -->
                                                     </div>
                                                 </div>
                                                 <div class="d-flex flex-row align-items-center mb-4">
                                                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                                     <div class="form-outline flex-fill mb-0">
                                                         <label class="form-label" for="form3Example4c">Password</label>
-                                                        <input type="password" id="form3Example4c" class="form-control" />
+                                                        <input type="password" id="form3Example4c" class="form-control" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
+                                                        <!-- <input type="password" id="form3Example4c" class="form-control" /> -->
                                                     </div>
                                                 </div>
                                                 <div class="d-flex flex-row align-items-center mb-4">
                                                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                                                     <div class="form-outline flex-fill mb-0">
                                                         <label class="form-label" for="form3Example4cd">Ulangi Password Anda</label>
-                                                        <input type="password" id="form3Example4cd" class="form-control" />
+                                                        <input type="password" id="form3Example4cd" class="form-control" placeholder="Confirm Password" name="cpassword" value="<?php echo $_POST['cpassword']; ?>" required>
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="form-check d-flex justify-content-center mb-5">
@@ -56,7 +106,7 @@
                                                     </label>
                                                 </div>
                                                 <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                    <a type="button" class="btn btn-lg btn-primary">Registrasi</a>
+                                                    <button class="btn btn-lg btn-primary" name="submit">Registrasi</button>
                                                 </div>
                                             </form>
                                         </div>
