@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="../css/login.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
     <body>
@@ -44,14 +44,14 @@ if (isset($_POST['submit'])) {
                         <div class="card" style="border-radius: 1rem;">
                             <div class="row g-0 align-items-center">
                                 <div class="col-md-6 col-lg-5 d-none d-md-block text-center">
-                                    <img src="/img/Consent-amico.png" alt="login form" class="img-fluid w-75">
+                                    <img src="../img/Consent-amico.png" alt="login form" class="img-fluid w-75">
                                 </div>
                                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                     <div class="card-body p-4 p-lg-5 text-black">
                                     <form action="" method="POST" class="login-email">
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             
-                                            <img src="/img/back.png" alt="Back" width="20" onclick="history.back()">
+                                            <img src="../img/back.png" alt="Back" width="20" onclick="history.back()">
                                             
                                             <!--Masukin buat headnya, Logo dll-->
                                             <a class="logoLogin" href="/index.html">

@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/css/register.css">
+        <link rel="stylesheet" href="../css/register.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
     <body>
@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
                                     <div class="row justify-content-center">
                                         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                                             <form>
-                                                <img src="/img/back.png" alt="Back" width="20" onclick="history.back()">
+                                                <img src="../img/back.png" alt="Back" width="20" onclick="history.back()">
                                             </form>
                                             <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registrasi</p>
                                             <form action="" method="POST" class="mx-1 mx-md-4">
@@ -111,7 +111,7 @@ if (isset($_POST['submit'])) {
                                             </form>
                                         </div>
                                         <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                                            <img src="/img/Consent-amico.png"
+                                            <img src="../img/Consent-amico.png"
                                         class="img-fluid" alt="Sample image">
                                         </div>
                                     </div>
